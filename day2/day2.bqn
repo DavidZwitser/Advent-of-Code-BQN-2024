@@ -2,7 +2,8 @@
 Tag ← -⟜1∘((1++`)×¬)=
 Split ← {(𝕨Tag𝕩)⊔𝕩}     # Group based on tags where ¯1 is dropped
 
-reports ← •ParseFloat⚇1 ' '⊸Split⚇1 •file.Lines "data.txt"
+# Split the lines on spaces and parse each group to numbers
+reports ← •ParseFloat⚇1 ' '⊸Split¨ •file.Lines "data.txt"
 
 Hs ← >⟜0 ∧ ≤⟜3          # high safe
 Ls ← Hs-                # low safe (same but for the negative direction)
@@ -10,7 +11,7 @@ Safe ← ∧´∘Hs ∨ ∧´∘Ls    # total safe (either all high safe or all 
 
 Deltas ← -˜´˘ 2⊸↕       # deltas of all neighbour pairs
 
-# Sum reports with deltas that are within bounds
+# Sum reports with deltas that are safe
 s1 ← +´ Safe¨ Deltas¨ reports
 
 # For each index (¨↕≠), return a copy where the value on that index is dropped
