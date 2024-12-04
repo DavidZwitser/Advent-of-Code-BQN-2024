@@ -23,8 +23,10 @@ donts ← {𝕩≢0?'d';0}¨ d Match "don't()"
 cleanList ← {𝕩≢0}¨⊸/ Combine muls‿dos‿donts
 
 active ← 1
-•Show s2 ← {
+s2 ← {
   'a'𝕊total: active↩1 ⋄ total;
   'd'𝕊total: active↩0 ⋄ total;
   v𝕊total: total + v × active
 }´ cleanList
+
+•Show "don't()"⍷d
