@@ -27,6 +27,7 @@ s2 ← {
   'a'𝕊total: active↩1 ⋄ total;
   'd'𝕊total: active↩0 ⋄ total;
   v𝕊total: total + v × active
-}´ cleanList
+}´ ˘cleanList
 
-•Show "don't()"⍷d
+# Not sure if the're still correct
+•Show s1‿s2
